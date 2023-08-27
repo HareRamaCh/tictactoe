@@ -1,0 +1,174 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #708090;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+body, input, textarea, button {
+  font-family: 'Quantico', sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  background-color: #6657c3;
+  padding: 1.5rem;
+  font-size: 3vw;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  border-bottom: 5px solid black;
+}
+
+/* --------------------------------- GAME GRID STYLES BELOW * -------------------------------- */
+
+.game-grid-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-grid {
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid black;
+  width: 30vw;
+  height: 30vw;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33.33%;
+  height: 33.33%;
+  font-size: 3rem;
+}
+
+.cell:nth-of-type(3n){
+  border-left: 2px solid black;
+}
+
+.cell:nth-of-type(3n-1){
+  border-left: 2px solid black;
+}
+
+#cell1, #cell2, #cell3, #cell4, #cell5, #cell6 {
+  border-bottom: 2px solid black;
+}
+
+.restart-button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.restart-button {
+  font-size: 1.25rem;
+  background-color: #6657c3;
+  min-width: 20%;
+  padding: 1rem;
+  border-radius: 3rem;
+  border-style: none;
+  margin-top: 1.5rem;
+  box-shadow: 0px 0px 1px 2px rgb(0, 0, 0);
+}
+
+.restart-button:hover {
+  cursor: pointer;
+  background-color: #4e3bc7;
+  transition: all 0.5s ease;
+}
+
+.highlighted-cell {
+  background-color:yellow;
+}
+
+/* -------------------- TURN INDICATOR STYLES AND SCOREBOARD STYLES BELOW -------------------- */
+
+.turn-indicator-container {
+  display: flex;
+  justify-content: center;
+  font-size: 2vw;
+  font-weight: normal;
+  margin-bottom: 2rem;
+}
+
+.scoreboard-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 2rem;
+}
+
+.x-wins {
+  background-color:dodgerblue;
+  border-left: 3px solid black;
+}
+
+.o-wins {
+  background-color:springgreen;
+}
+
+.ties {
+  background-color: grey;
+  
+}
+
+.x-wins, .o-wins, .ties {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 3px solid black;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  height: 10vh;
+  width: 20vw;
+  padding: 1.25rem;
+}
+
+/* ----------------------------------- MEDIA QUERIES BELOW ----------------------------------- */
+@media (width<=1200px) and (width>800px) {
+  header {
+    font-size: 6vw;
+  }
+  .turn-indicator {
+    font-size: 3vw;
+  }
+  .game-grid {
+    width: 50vw;
+    height: 50vw;
+  }
+}
+@media(width<=800px) and (width>450px) {
+  header {
+    font-size: 8vw;
+  }
+  .turn-indicator {
+    font-size: 5vw;
+  }
+
+  .game-grid {
+    width: 70vw;
+    height: 70vw;
+  }
+}
+@media(width<=450px) {
+  header {
+    font-size: 10vw;
+  }
+  .turn-indicator {
+    font-size: 7vw;
+  }
+  .game-grid {
+    width: 85vw;
+    height: 85vw;
+  }
+  .x-wins, .o-wins, .ties {
+    width: 30vw;
+  }
+}
